@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Roundnet RG-ID Banner",
+  "version": "1.0.0",
+  "description": "Shows the RG-ID of a player on their PlayerZone profile page.",
+  "content_scripts": [
+    {
+      "matches": ["https://playerzone.roundnetgermany.de/players/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

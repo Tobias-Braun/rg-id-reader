@@ -1,0 +1,61 @@
+#rg-id-banner {
+  position: absolute;
+  top: 72px;
+  left: 16px;
+  z-index: 20; /* stay above any app overlay */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #e9e9eb;
+  color: #1c1c1e;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.2;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  pointer-events: none; /* never block clicks on the page underneath */
+  user-select: text;
+  opacity: .5;
+  transition: opacity 0.15s ease;
+}
+
+/* Bring the banner to full opacity when the user interacts with it. */
+#rg-id-banner:hover {
+  opacity: 1;
+}
+
+#rg-id-banner .rg-id-copy {
+  pointer-events: auto; /* re-enable clicks just for the copy button */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  margin: -2px -2px -2px 0;
+  border: none;
+  background: transparent;
+  color: #6b6b70;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+#rg-id-banner .rg-id-copy:hover {
+  color: #1c1c1e;
+  background: rgba(0, 0, 0, 0.06);
+}
+
+#rg-id-banner .rg-id-copy.rg-id-copied {
+  color: #1a8a32; /* green checkmark after a successful copy */
+}
+
+/* On narrow (mobile) viewports, anchor to the top-right instead of top-left. */
+@media (max-width: 768px) {
+  #rg-id-banner {
+    top: 92px;
+    right: 20px;
+    left: auto; /* override the desktop left anchor */
+  }
+}
